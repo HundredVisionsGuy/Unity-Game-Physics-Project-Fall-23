@@ -14,6 +14,7 @@ public class PlayerControls : MonoBehaviour
     public bool playerTwoControls;
     public float runningSpeed = 4;
     public float gravity = 8;
+    public float jumpSpeed = 0.5f;
     public bool freeRotation = true;
     public float freeRotationSpeed = 90;
     public bool running = false;
@@ -60,7 +61,7 @@ public class PlayerControls : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space)){
                     Debug.Log("JUMP");
                     if (running){
-                        float slightMove = 0.5f;
+                        float slightMove = jumpSpeed;
                         moveDir = new Vector3 (0, 2, slightMove);
                     } else {
                         moveDir = new Vector3 (0, 2, 0);
@@ -115,7 +116,7 @@ public class PlayerControls : MonoBehaviour
                 if (Input.GetKey(KeyCode.S)){
                     anim.SetBool("Jump", true);
                     if (running){
-                        float slightMove = 0.5f;
+                        float slightMove = jumpSpeed;
                         moveDir = new Vector3 (0, 2, slightMove);
                     } else {
                         moveDir = new Vector3 (0, 1, 0);
